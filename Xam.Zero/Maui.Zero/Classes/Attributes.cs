@@ -1,4 +1,4 @@
-namespace Maui.Zero.Classes
+namespace Maui.Zero.Standard.Classes
 {
     /// <summary>
     /// Mark class as transient

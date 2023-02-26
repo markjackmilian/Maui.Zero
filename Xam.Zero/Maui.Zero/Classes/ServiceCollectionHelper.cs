@@ -1,7 +1,7 @@
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Maui.Zero.Classes;
+namespace Maui.Zero.Standard.Classes;
 
 static class ServiceCollectionHelper
 {
