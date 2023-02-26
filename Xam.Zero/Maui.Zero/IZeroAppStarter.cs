@@ -2,14 +2,14 @@ namespace Maui.Zero;
 
 public interface IZeroAppStarter
 {
-    Func<Page> StartEvaluator { get; }
+    Func<IServiceProvider,Page> StartEvaluator { get; }
 }
 
 class ZeroAppStarter : IZeroAppStarter
 {
-    public Func<Page> StartEvaluator { get; }
+    public Func<IServiceProvider,Page> StartEvaluator { get; }
 
-    public ZeroAppStarter(Func<Page> startEvaluator)
+    public ZeroAppStarter(Func<IServiceProvider,Page> startEvaluator)
     {
         StartEvaluator = startEvaluator;
     }

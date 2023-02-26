@@ -1,11 +1,15 @@
-﻿namespace Maui.Zero.Sample;
+﻿using Maui.Zero.Sample.ViewModels;
+
+namespace Maui.Zero.Sample;
 
 public partial class MainPage : ContentPage
 {
+    private readonly ProvaModel _model;
     int count = 0;
 
-    public MainPage()
+    public MainPage(ProvaModel model)
     {
+        _model = model;
         InitializeComponent();
     }
 

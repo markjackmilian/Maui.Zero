@@ -2,7 +2,7 @@
 
 public partial class App : ZeroApp
 {
-    public App(IZeroAppStarter starter) : base(starter)
+    public App(IServiceProvider provider, IZeroAppStarter starter) : base(provider,starter)
     {
         InitializeComponent();
     }

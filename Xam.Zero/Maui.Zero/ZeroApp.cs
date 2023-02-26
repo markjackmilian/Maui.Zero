@@ -2,12 +2,14 @@ namespace Maui.Zero;
 
 public class ZeroApp : Application
 {
-    public ZeroApp(IZeroAppStarter starter)
+    public static IServiceProvider ServiceProvider { get; private set; }
+
+    public ZeroApp(IServiceProvider serviceProvider,IZeroAppStarter starter)
     {
         if (starter.StartEvaluator == null)
             throw new Exception("No startup evaluator configured");
-
-        this.MainPage = starter.StartEvaluator.Invoke();
+        ServiceProvider = serviceProvider;
+        this.MainPage = starter.StartEvaluator.Invoke(serviceProvider);
     }
 
    

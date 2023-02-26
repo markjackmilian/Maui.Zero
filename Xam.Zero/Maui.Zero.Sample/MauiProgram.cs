@@ -17,7 +17,7 @@ public static class MauiProgram
             .AddZero(app =>
             {
                 app.UseTransientPages = false;
-            },() => new MainPage());
+            },provider => provider.GetService<MainPage>());
 
 #if DEBUG
         builder.Logging.AddDebug();

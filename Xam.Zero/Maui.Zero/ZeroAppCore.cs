@@ -1,7 +1,7 @@
 using Maui.Zero.Standard.Classes;
+using Maui.Zero.ViewModels;
 
-namespace Maui.Zero
-;
+namespace Maui.Zero;
 
 public class ZeroAppCore
 {
@@ -55,13 +55,9 @@ public class ZeroAppCore
     }
 }
 
-internal class ZeroBaseModel
-{
-}
-
 public static class ZeroAppBuilder
 {
-    public static MauiAppBuilder AddZero(this MauiAppBuilder builder, Action<ZeroAppCore> options, Func<Page> startupEvaluator)
+    public static MauiAppBuilder AddZero(this MauiAppBuilder builder, Action<ZeroAppCore> options, Func<IServiceProvider,Page> startupEvaluator)
     {
         var zeroInstance = new ZeroAppCore(builder.Services);
         options(zeroInstance);
