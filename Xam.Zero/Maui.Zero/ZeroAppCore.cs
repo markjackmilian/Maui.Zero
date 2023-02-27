@@ -1,4 +1,5 @@
-using Maui.Zero.Standard.Classes;
+using Maui.Zero.Classes;
+using Maui.Zero.Services;
 using Maui.Zero.ViewModels;
 
 namespace Maui.Zero;
@@ -63,6 +64,7 @@ public static class ZeroAppBuilder
         options(zeroInstance);
 
         builder.Services.AddTransient<IZeroAppStarter>(provider => new ZeroAppStarter(startupEvaluator));
+        builder.Services.AddSingleton<IPageResolver, PageResolver>();
         zeroInstance.Setup();
         return builder;
     }

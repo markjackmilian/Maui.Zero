@@ -1,4 +1,5 @@
-using Xam.Zero.Classes;
+using Maui.Zero.Classes;
+using Maui.Zero.Services;
 
 namespace Maui.Zero.ViewModels;
 
@@ -149,11 +150,9 @@ public class ZeroBaseModel : NotifyBaseModel
         /// <returns></returns>
         private Page ResolvePageWithContext<T>(object data) where T : Page
         {
-            // todo
-            return null;
-            // var resolver = ZeroIoc.Container.Resolve<IPageResolver>();
-            // var page = resolver.ResolvePage<T>(this, data);
-            // return page;
+            var resolver = ZeroApp.ServiceProvider.GetService<IPageResolver>();
+            var page = resolver.ResolvePage<T>(this, data);
+            return page;
         }
         
         /// <summary>
@@ -164,12 +163,9 @@ public class ZeroBaseModel : NotifyBaseModel
         /// <returns></returns>
         private Page ResolvePageWithContext(Type pageType, object data)
         {
-            // todo
-            return null;
-            
-            // var resolver = ZeroIoc.Container.Resolve<IPageResolver>();
-            // var page = resolver.ResolvePage(pageType,this, data);
-            // return page;
+            var resolver = ZeroApp.ServiceProvider.GetService<IPageResolver>();
+            var page = resolver.ResolvePage(pageType,this, data);
+            return page;
         }
 
         #endregion

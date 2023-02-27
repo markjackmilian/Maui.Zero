@@ -46,6 +46,7 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+        <PackageReference Include="mvvm.zcommand" Version="0.1.2" />
     </ItemGroup>
 
     <ItemGroup>

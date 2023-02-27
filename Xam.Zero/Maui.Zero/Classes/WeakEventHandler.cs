@@ -1,8 +1,6 @@
-using System;
-using System.Diagnostics;
 using System.Reflection;
 
-namespace Xam.Zero.Classes
+namespace Maui.Zero.Classes
 {
     public sealed class WeakEventHandler<TEventArgs>  
     {

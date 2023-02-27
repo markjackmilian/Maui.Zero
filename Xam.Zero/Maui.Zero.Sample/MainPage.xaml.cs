@@ -4,17 +4,20 @@ namespace Maui.Zero.Sample;
 
 public partial class MainPage : ContentPage
 {
-    private readonly ProvaModel _model;
+    private readonly IServiceProvider _serviceProvider;
     int count = 0;
 
-    public MainPage(ProvaModel model)
+    public MainPage(IServiceProvider serviceProvider)
     {
-        _model = model;
+        _serviceProvider = serviceProvider;
         InitializeComponent();
     }
 
-    private void OnCounterClicked(object sender, EventArgs e)
+    private async void OnCounterClicked(object sender, EventArgs e)
     {
+
+        await this.Navigation.PushModalAsync(this._serviceProvider.GetService<Page1>());
+        
         count++;
 
         if (count == 1)

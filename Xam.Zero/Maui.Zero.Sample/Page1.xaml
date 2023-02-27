@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:markupExtensions="clr-namespace:Maui.Zero.MarkupExtensions;assembly=Maui.Zero"
+             xmlns:sample="clr-namespace:Maui.Zero.Sample"
+             BindingContext="{markupExtensions:ViewModelMarkup ViewModel={x:Type sample:Page1ViewModel}}"
+             x:DataType="{x:Type sample:Page1ViewModel}"
+             x:Class="Maui.Zero.Sample.Page1">
+    <Label
+        Text="{Binding TestText}"
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        />
+</ContentPage>
