@@ -12,7 +12,7 @@ public class ZeroAppCore
 
     internal ZeroAppCore(IServiceCollection serviceCollection)
     {
-        _serviceCollection = serviceCollection;
+        this._serviceCollection = serviceCollection;
         this.UseTransientPages = true;
         this.UseTransientViewModels = true;
     }
@@ -20,6 +20,8 @@ public class ZeroAppCore
 
     public void Setup()
     {
+        this._serviceCollection.AddSingleton<IShellService, ShellService>();
+        
         this.RegisterModels();
         this.RegisterPages();
         this.RegisterShells();
