@@ -11,6 +11,15 @@
 
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+        <Version>1.0.0-alpha1</Version>
+        <Title>Xam Zero 2 MAUI</Title>
+        <Authors>Marco Milani</Authors>
+        <Description>Porting of Xam.Zero framework to MAUI</Description>
+        <Copyright>Marco Milani</Copyright>
+        <PackageProjectUrl>https://github.com/markjackmilian/Maui.Zero</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/markjackmilian/Maui.Zero</RepositoryUrl>
+        <PackageTags>maui,xa.zero,maui.zero,mvvm</PackageTags>
+        <PackageId>Xam.Zero.Next</PackageId>
     </PropertyGroup>
 
 </Project>
