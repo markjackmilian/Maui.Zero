@@ -60,12 +60,11 @@ public class ZeroAppCore
 
 public static class ZeroAppBuilder
 {
-    public static MauiAppBuilder AddZero(this MauiAppBuilder builder, Action<ZeroAppCore> options, Func<IServiceProvider,Page> startupEvaluator)
+    public static MauiAppBuilder AddZero(this MauiAppBuilder builder, Action<ZeroAppCore> options = null)
     {
         var zeroInstance = new ZeroAppCore(builder.Services);
-        options(zeroInstance);
+        options?.Invoke(zeroInstance);
 
-        builder.Services.AddTransient<IZeroAppStarter>(provider => new ZeroAppStarter(startupEvaluator));
         builder.Services.AddSingleton<IPageResolver, PageResolver>();
         zeroInstance.Setup();
         return builder;
